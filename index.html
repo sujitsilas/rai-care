@@ -13,7 +13,20 @@
 <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RaiCare - Revolutionary Wound Healing Technology</title>
+    <title>RaiCare | SparkHeal: Healing That Moves With You</title>
+    <meta name="description" content="SparkHeal by RaiCare is a self-powered electrical stimulation patch that turns passive wound dressings into active therapy, powered by the patient's own movement.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RaiCare | SparkHeal">
+    <meta property="og:description" content="A self-powered patch that turns passive wound dressings into active therapy. Healing That Moves With You.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6BF1'/%3E%3Cpath d='M18 3 9 18h6l-2 11 10-16h-6z' fill='%23F8D55E'/%3E%3C/svg%3E">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -21,312 +34,2943 @@
             box-sizing: border-box;
         }
 
+        /* Palette sampled from the SparkHeal pitch decks */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #dbeafe;
-            --text: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
-            --surface: #f8fafc;
-            --border: #e2e8f0;
+            --blue: #2f6bf1;          /* SparkHeal wordmark */
+            --blue-dark: #1f55d6;
+            --blue-soft: #3e8bff;
+            --navy: #0c1f5c;
+            --navy-2: #142d7a;
+            --ink: #0f172a;
+            --ink-2: #475569;
+            --ink-3: #64748b;
+            --lavender: #e2e7fb;      /* deck slide background */
+            --periwinkle: #d0d9ff;    /* deck advisor card */
+            --sky: #99cdff;           /* deck photo panel */
+            --cyan: #7dd8f8;          /* deck corner shapes */
+            --cream: #fffbf2;         /* deck team slide */
+            --gold: #a08210;          /* "Wounds Don't Have To Be A Life Sentence" */
+            --bolt: #f8d55e;          /* lightning bolt */
+            --line: #dbe2f6;
+            --radius-lg: 28px;
+            --radius: 20px;
+            --shadow: 0 18px 40px -18px rgba(12, 31, 92, 0.28);
+            --font-display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: var(--text);
-            background: var(--surface);
-            min-height: 100vh;
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--ink);
+            background: #ffffff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(32px, 4.2vw, 50px);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(22px, 2.2vw, 28px);
+            font-weight: 600;
+        }
+
+        ::selection {
+            background: var(--blue);
+            color: #ffffff;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--blue-soft);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 112px 0;
+            position: relative;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+
+        .section-head {
+            max-width: 720px;
+            margin-bottom: 56px;
+        }
+
+        .section-head p {
+            font-size: 19px;
+            color: var(--ink-2);
+            margin-top: 18px;
+        }
+
+        .footnote {
+            font-size: 13px;
+            color: var(--ink-3);
+            line-height: 1.5;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 8px;
+            background: var(--navy);
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            left: 8px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(47, 107, 241, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(47, 107, 241, 0.42);
+        }
+
+        .btn-ghost {
+            color: var(--navy);
+            border: 1.5px solid rgba(12, 31, 92, 0.2);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        /* Nav */
+        .nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 50;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: saturate(160%) blur(12px);
+            -webkit-backdrop-filter: saturate(160%) blur(12px);
+            box-shadow: 0 1px 0 var(--line);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .brand svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-2);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-links .btn {
+            padding: 10px 22px;
+            color: #ffffff;
+        }
+
+        .nav-links .btn:hover {
+            color: #ffffff;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            color: var(--navy);
         }
 
         /* Hero */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 48px 24px;
-            background: #ffffff;
-            position: relative;
+            background: var(--lavender);
+            padding: 148px 0 120px;
             overflow: hidden;
         }
 
-
-        .hero-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: min(34vw, 420px);
+            height: 150px;
+            background: var(--cyan);
+            border-bottom-left-radius: 120px;
+            opacity: 0.55;
         }
 
-        .logo-img {
-            max-width: 800px;
-            width: 100%;
-            margin-bottom: 32px;
-            animation: fadeUp 0.8s ease-out;
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: 52px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeUp 0.8s ease-out 0.1s both;
+            margin: 0;
         }
 
-        .hero .subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 540px;
-            margin: 0 auto 48px;
-            font-weight: 400;
-            animation: fadeUp 0.8s ease-out 0.2s both;
+        .wordmark {
+            width: min(540px, 100%);
+            height: auto;
         }
 
-        .cta-btn {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--primary);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
+        .hero-sub {
+            font-family: var(--font-display);
+            font-size: clamp(22px, 2.5vw, 30px);
             font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-            animation: fadeUp 0.8s ease-out 0.3s both;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            color: var(--blue);
+            margin-top: 26px;
         }
 
-        .cta-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        .hero-sub em {
+            font-style: italic;
+            font-weight: 700;
         }
 
-        .scroll-hint {
+        .hero-lead {
+            font-size: 18px;
+            color: var(--ink-2);
+            max-width: 520px;
+            margin-top: 18px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 34px;
+        }
+
+        .steps {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 500px;
+            margin-top: 52px;
+            position: relative;
+        }
+
+        .steps::before {
+            content: "";
             position: absolute;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            animation: bounce 2s infinite;
+            top: 6px;
+            left: 6px;
+            right: calc(33.333% - 6px);
+            height: 1.5px;
+            background: rgba(12, 31, 92, 0.25);
         }
 
-        .scroll-hint span {
+        .steps li {
+            position: relative;
+            padding-top: 26px;
+        }
+
+        .steps .dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--lavender);
+            border: 2px solid var(--navy);
+        }
+
+        .steps li:nth-child(3) .dot {
+            background: var(--bolt);
+            border-color: var(--gold);
+        }
+
+        .steps .num {
             display: block;
-            width: 24px;
-            height: 24px;
-            border-right: 2px solid var(--text-muted);
-            border-bottom: 2px solid var(--text-muted);
-            transform: rotate(45deg);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--navy);
         }
 
-        /* Contact */
-        .contact {
-            padding: 100px 24px;
+        .steps .lbl {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .hero-visual {
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .hero-main {
+            width: 78%;
+            margin-left: auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--sky);
+            box-shadow: var(--shadow);
+            aspect-ratio: 688 / 1010;
+        }
+
+        .hero-main img,
+        .hero-inset img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-inset {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 44%;
+            aspect-ratio: 4 / 5;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 6px solid #ffffff;
+            box-shadow: var(--shadow);
+            transform: rotate(-4deg);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 999px;
             background: #ffffff;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            box-shadow: 0 8px 20px -8px rgba(12, 31, 92, 0.3);
+            white-space: nowrap;
+        }
+
+        .chip svg {
+            width: 16px;
+            height: 16px;
+            flex: none;
+        }
+
+        .hero-chip {
+            position: absolute;
+            top: 36px;
+            left: 2%;
+        }
+
+        .hero-chip-2 {
+            position: absolute;
+            right: -8px;
+            bottom: 96px;
+        }
+
+        /* The patch */
+        .gallery {
+            display: grid;
+            grid-template-columns: 0.8fr 0.8fr 1.4fr;
+            gap: 16px;
+            height: 480px;
+        }
+
+        .gallery figure {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--lavender);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery figure:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery .stride img {
+            object-position: 75% 50%;
+        }
+
+        .gallery figcaption {
+            position: absolute;
+            left: 16px;
+            bottom: 16px;
+        }
+
+        .inside {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 56px;
+            align-items: center;
+            margin-top: 24px;
+            padding: 56px;
+            border-radius: var(--radius-lg);
+            background: var(--navy);
+            color: #ffffff;
+        }
+
+        .layers {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .layer {
             text-align: center;
         }
 
-        .contact-inner {
-            max-width: 640px;
-            margin: 0 auto;
+        .layer .layer-img {
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000000;
+            aspect-ratio: 1;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
         }
 
-        .contact h2 {
-            font-size: 36px;
+        .layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .layer figcaption {
+            margin-top: 14px;
+        }
+
+        .layer strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .layer span {
+            display: block;
+            font-size: 14px;
+            color: #b9c6ee;
+        }
+
+        .plus {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--bolt);
+            margin-bottom: 52px;
+        }
+
+        .inside h3 {
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+
+        .inside > div > p {
+            color: #c9d3f0;
+        }
+
+        .checks {
+            list-style: none;
+            margin-top: 26px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .checks li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .checks svg {
+            flex: none;
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+        }
+
+        .checks strong {
             font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            color: var(--text);
         }
 
-        .contact .section-subtitle {
+        .inside .checks li {
+            color: #e6ebfa;
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 56px;
+            align-items: center;
+            margin-top: 24px;
+            padding: 48px 56px;
+            border-radius: var(--radius-lg);
+            background: var(--lavender);
+        }
+
+        .results .big {
+            font-family: var(--font-display);
+            font-size: clamp(72px, 9vw, 112px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--blue);
+        }
+
+        .results .big-label {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            line-height: 1.35;
+        }
+
+        .results .footnote {
+            margin-top: 16px;
+        }
+
+        .bars {
+            display: grid;
+            gap: 18px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .bar-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ink-2);
+            line-height: 1.3;
+        }
+
+        .bar-row.ours .bar-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .bar {
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.75);
+            overflow: hidden;
+        }
+
+        .bar i {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            width: 0;
+            padding-right: 12px;
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-style: normal;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: width 1.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .bar-row.soc .bar i { background: #bcc6de; }
+        .bar-row.es .bar i { background: var(--sky); }
+        .bar-row.ours .bar i { background: var(--blue); color: #ffffff; }
+
+        html:not(.js) .bar i,
+        .results.in .bar i {
+            width: var(--w);
+        }
+
+        .bars-axis {
+            font-size: 13px;
+            color: var(--ink-3);
+            padding-left: 186px;
+        }
+
+        /* Story */
+        .story {
+            background: var(--navy);
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .story::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: var(--blue);
+            opacity: 0.18;
+        }
+
+        .story-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .story-photo {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 1100 / 661;
+            box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+        }
+
+        .story-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story .eyebrow {
+            color: var(--bolt);
+        }
+
+        .story h2 {
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .story-text p {
+            color: #c9d3f0;
+            font-size: 18px;
+        }
+
+        .story-text p + p {
+            margin-top: 16px;
+        }
+
+        .story-text p strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .story-text .story-note {
+            font-size: 13px;
+            color: #8d9bc7;
+            margin-top: 20px;
+        }
+
+        .stats-band {
+            position: relative;
+            margin-top: 88px;
+            padding-top: 56px;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .stats-band h3 {
+            color: #ffffff;
+            font-size: clamp(24px, 2.8vw, 34px);
+            max-width: 620px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .stat .n {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 4.4vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            color: var(--bolt);
+        }
+
+        .stat p {
+            color: #c9d3f0;
+            font-size: 15px;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        .story .footnote {
+            color: #8d9bc7;
+            margin-top: 40px;
+        }
+
+        /* Workflow */
+        .workflow {
+            background: var(--lavender);
+        }
+
+        .flow {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            counter-reset: step;
+        }
+
+        .flow li {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 28px 24px 24px;
+            border-radius: var(--radius);
+            background: #ffffff;
+            border: 1.5px solid transparent;
+        }
+
+        .flow li.on {
+            border-color: var(--blue);
+            box-shadow: 0 16px 36px -20px rgba(47, 107, 241, 0.55);
+        }
+
+        .flow li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -19px;
+            width: 14px;
+            height: 14px;
+            border-top: 2px solid var(--blue);
+            border-right: 2px solid var(--blue);
+            transform: translateY(-50%) rotate(45deg);
+            z-index: 1;
+        }
+
+        .flow .step-n {
+            display: inline-grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--lavender);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .flow li.on .step-n {
+            background: var(--blue);
+            color: #ffffff;
+        }
+
+        .flow h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .flow p {
+            font-size: 15px;
+            color: var(--ink-2);
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .flow .who {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 6px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            align-self: flex-start;
+            margin-top: 18px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 600;
+            background: #eef1fb;
+            color: var(--ink-2);
+        }
+
+        .tag.blue {
+            background: var(--blue);
+            color: #ffffff;
+        }
+
+        .tag svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        .loop {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 22px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .loop::before,
+        .loop::after {
+            content: "";
+            flex: 1;
+            border-top: 1.5px dashed rgba(12, 31, 92, 0.25);
+        }
+
+        .loop svg {
+            width: 18px;
+            height: 18px;
+            color: var(--blue);
+        }
+
+        .unchanged {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .unchanged > div {
+            padding: 4px 0 4px 22px;
+            border-left: 3px solid var(--blue);
+        }
+
+        .unchanged h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .unchanged p {
+            font-size: 15px;
+            color: var(--ink-2);
+        }
+
+        .codes {
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .sites {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 48px;
+        }
+
+        .sites span:first-child {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink-2);
+            margin-right: 6px;
+        }
+
+        .sites .chip {
+            box-shadow: none;
+            border: 1px solid var(--line);
+            font-weight: 500;
+        }
+
+        /* Validation */
+        .val-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .bignum {
+            font-family: var(--font-display);
+            font-size: clamp(104px, 13vw, 168px);
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+            color: var(--blue);
+        }
+
+        .bignum-label {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 16px;
+            max-width: 340px;
+        }
+
+        .icorps-logos {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .icorps-logos img {
+            height: 46px;
+            width: auto;
+        }
+
+        .breakdown {
+            list-style: none;
+            margin-top: 36px;
+            border-top: 1px solid var(--line);
+        }
+
+        .breakdown li {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 12px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 15px;
+            color: var(--ink-2);
+            line-height: 1.45;
+        }
+
+        .breakdown b {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .breakdown strong {
+            color: var(--ink);
+        }
+
+        .heard-title {
+            margin-bottom: 22px;
+        }
+
+        .quotes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .quote {
+            display: flex;
+            flex-direction: column;
+            padding: 26px 26px 22px;
+            border-radius: var(--radius);
+            background: var(--lavender);
+        }
+
+        .quote::before {
+            content: "\201C";
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 0.6;
+            color: var(--blue);
+            margin-bottom: 14px;
+            height: 24px;
+        }
+
+        .quote p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ink);
+            flex: 1;
+        }
+
+        .quote.big p {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--navy);
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 16px;
+            font-style: normal;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--ink-3);
+        }
+
+        .heard-note {
+            margin-top: 14px;
+        }
+
+        .commit {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 72px;
+        }
+
+        .commit > div {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 28px;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+        }
+
+        .commit .logos {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 64px;
+        }
+
+        .commit .logos img {
+            height: 100%;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .commit .logos .wide {
+            height: 52px;
+        }
+
+        .commit .icon {
+            display: grid;
+            place-items: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--lavender);
+            color: var(--blue);
+        }
+
+        .commit .icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .commit p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .commit strong {
+            font-family: var(--font-display);
+            font-weight: 600;
+        }
+
+        .commit .sub {
+            display: block;
+            font-size: 14px;
+            color: var(--ink-3);
+            margin-top: 4px;
+        }
+
+        /* Regulatory */
+        .reg {
+            margin-top: 96px;
+            padding: 56px;
+            border-radius: var(--radius-lg);
+            background: var(--lavender);
+        }
+
+        .reg-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .reg-head p {
+            color: var(--ink-2);
+            max-width: 520px;
+            margin-top: 10px;
+        }
+
+        .reg-steps {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            position: relative;
+        }
+
+        .reg-steps::before {
+            content: "";
+            position: absolute;
+            top: 13px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, rgba(12, 31, 92, 0.18) 42%);
+        }
+
+        .reg-steps li {
+            position: relative;
+            padding-top: 46px;
+        }
+
+        .reg-steps li::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--lavender);
+            border: 2px solid rgba(12, 31, 92, 0.3);
+        }
+
+        .reg-steps li.done::before {
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .reg-steps li.defined::before {
+            border-color: var(--blue);
+        }
+
+        .status {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: var(--ink-3);
+            margin-bottom: 12px;
+        }
+
+        .done .status {
+            background: var(--blue);
+            color: #ffffff;
+        }
+
+        .defined .status {
+            color: var(--blue);
+        }
+
+        .reg-steps h4 {
             font-size: 17px;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            line-height: 1.6;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .reg-steps p {
+            font-size: 14px;
+            color: var(--ink-2);
+            line-height: 1.5;
+        }
+
+        .reg .footnote {
+            margin-top: 32px;
+        }
+
+        /* Team */
+        .team {
+            background: var(--cream);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            max-width: 800px;
+        }
+
+        .member .photo {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 314 / 351;
+            background: var(--lavender);
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member h3 {
+            font-size: 24px;
+            margin-top: 22px;
+        }
+
+        .member .role {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--blue);
+            margin-top: 4px;
+        }
+
+        .member .bg {
+            font-size: 15px;
+            color: var(--ink-2);
+            margin-top: 8px;
+        }
+
+        .member .aff {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            height: 38px;
+            margin-top: 14px;
+        }
+
+        .member .aff img {
+            width: auto;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .member .aff .aff-honeywell {
+            height: 22px;
+        }
+
+        .member .aff .aff-stanford {
+            height: 36px;
+        }
+
+        .subhead {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 80px 0 28px;
+        }
+
+        .subhead::after {
+            content: "";
+            flex: 1;
+            border-top: 1px solid rgba(12, 31, 92, 0.14);
+        }
+
+        .advisors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .person {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: #ffffff;
+            border: 1px solid #f0e9d8;
+        }
+
+        .person img {
+            flex: none;
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px var(--periwinkle);
+        }
+
+        .person h4 {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .person p {
+            font-size: 14px;
+            color: var(--ink-2);
+            line-height: 1.45;
+            margin-top: 4px;
+        }
+
+        .person .org {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .person div > img.org-logo {
+            display: block;
+            width: auto;
+            height: 20px;
+            margin-top: 10px;
+            border-radius: 0;
+            box-shadow: none;
+            background: none;
+            object-fit: contain;
+        }
+
+        .person div > img.org-jnj { height: 26px; }
+        .person div > img.org-kaiser { height: 28px; }
+        .person div > img.org-bentley { height: 30px; }
+        .person div > img.org-kdsa { height: 34px; border-radius: 2px; }
+
+        .counsel {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .counsel .person img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .firm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: #ffffff;
+            border: 1px solid #f0e9d8;
+        }
+
+        .firm img {
+            height: 34px;
+            width: auto;
+            align-self: flex-start;
+        }
+
+        .firm p {
+            font-size: 14px;
+            color: var(--ink-2);
+        }
+
+        .support {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 28px 44px;
+            padding: 36px 40px;
+            border-radius: var(--radius-lg);
+            background: #ffffff;
+            border: 1px solid #f0e9d8;
+        }
+
+        .support img {
+            height: 46px;
+            width: auto;
+        }
+
+        .support .tall {
+            height: 58px;
+        }
+
+        /* Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .principles-intro {
+            position: sticky;
+            top: 120px;
+        }
+
+        .principles-intro p {
+            font-size: 19px;
+            color: var(--ink-2);
+            margin-top: 18px;
+        }
+
+        .principles-intro .tagline {
+            display: inline-block;
+            margin-top: 28px;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            color: var(--blue);
+        }
+
+        .principles {
+            list-style: none;
+        }
+
+        .principles li {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 16px;
+            padding: 34px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .principles li:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .principles .pn {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--blue);
+            padding-top: 6px;
+        }
+
+        .principles h3 {
+            margin-bottom: 10px;
+        }
+
+        .principles p {
+            color: var(--ink-2);
+        }
+
+        /* Contact & lead capture */
+        .contact {
+            background: var(--lavender);
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .lead-intro > p {
+            font-size: 19px;
+            color: var(--ink-2);
+            margin-top: 18px;
+        }
+
+        .lead-intro .checks {
+            margin-top: 28px;
+            color: var(--ink);
+        }
+
+        .lead-intro .checks svg {
+            color: var(--blue);
+        }
+
+        .lead-intro .checks li {
+            gap: 16px;
+        }
+
+        .lead-intro .checks span {
+            font-size: 15px;
+            color: var(--ink-2);
+            line-height: 1.5;
+        }
+
+        .lead-intro .checks strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .lead-card {
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            background: #ffffff;
+            box-shadow: var(--shadow);
+        }
+
+        .pill-group {
+            border: 0;
+            margin: 0 0 24px;
+            padding: 0;
+        }
+
+        .pill-group legend,
+        .field label {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pill input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+        }
+
+        .pill span {
+            display: inline-block;
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: 1.5px solid var(--line);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-2);
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .pill:hover span {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .pill input:checked + span {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: #ffffff;
+        }
+
+        .pill input:focus-visible + span {
+            outline: 3px solid var(--blue-soft);
+            outline-offset: 2px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .field .opt {
+            font-weight: 400;
+            color: var(--ink-3);
+        }
+
+        .field input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            background: #fbfcff;
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--ink);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .field input:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(47, 107, 241, 0.15);
+        }
+
+        .field input:user-invalid {
+            border-color: #d92d20;
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 15px;
+            color: var(--ink-2);
+            cursor: pointer;
+        }
+
+        .check input {
+            flex: none;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--blue);
+        }
+
+        .hp {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .lead-submit {
+            width: 100%;
+            justify-content: center;
+            margin-top: 24px;
+            border: 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .lead-submit[disabled] {
+            opacity: 0.7;
+            cursor: wait;
+            transform: none;
+        }
+
+        .lead-privacy {
+            font-size: 13px;
+            color: var(--ink-3);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .lead-status {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .lead-status:empty {
+            display: none;
+        }
+
+        .lead-status.error {
+            color: #b42318;
+        }
+
+        .lead-status a {
+            color: inherit;
+            font-weight: 700;
+        }
+
+        .lead-done {
+            text-align: center;
+            padding: 40px 12px;
+        }
+
+        .lead-done:focus {
+            outline: none;
+        }
+
+        .lead-done .done-icon {
+            display: grid;
+            place-items: center;
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--lavender);
+        }
+
+        .lead-done .done-icon svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .lead-done p {
+            color: var(--ink-2);
+            margin-top: 10px;
+        }
+
+        .contact-alt {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .contact-alt-label {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
         }
 
         .contact-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            max-width: 880px;
+            margin: 0 auto;
         }
 
         .contact-card {
-            padding: 32px 20px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            text-decoration: none;
             display: block;
+            padding: 32px 20px;
+            border-radius: var(--radius);
+            background: #ffffff;
+            border: 1.5px solid transparent;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
         .contact-card:hover {
-            border-color: var(--primary);
+            border-color: var(--blue);
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 16px 36px -18px rgba(47, 107, 241, 0.5);
         }
 
         .contact-card .card-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
             margin: 0 auto 16px;
-            font-size: 20px;
+            border-radius: 14px;
+            background: var(--lavender);
+            color: var(--blue);
+        }
+
+        .contact-card .card-icon svg {
+            width: 22px;
+            height: 22px;
         }
 
         .contact-card .card-label {
+            font-family: var(--font-display);
             font-size: 12px;
             font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
+            color: var(--ink-3);
             margin-bottom: 6px;
         }
 
         .contact-card .card-email {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
-            color: var(--primary);
+            color: var(--blue);
             word-break: break-all;
         }
 
         /* Footer */
         footer {
-            padding: 32px 24px;
-            text-align: center;
-            background: var(--text);
-            color: var(--text-muted);
-            font-size: 13px;
+            padding: 56px 0 40px;
+            background: var(--navy);
+            color: #a9b6dc;
+            font-size: 14px;
         }
 
-        /* Animations */
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        footer .brand {
+            color: #ffffff;
+        }
+
+        .footer-tag {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 600;
+            color: var(--bolt);
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 24px;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .footer-bottom p:first-child {
+            max-width: 680px;
+        }
+
+        /* Reveal on scroll */
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .js .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
         @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(24px);
+                transform: translateY(22px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: none;
             }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
+        .hero-copy > * {
+            animation: fadeUp 0.8s ease-out both;
+        }
+
+        .hero-copy > *:nth-child(2) { animation-delay: 0.08s; }
+        .hero-copy > *:nth-child(3) { animation-delay: 0.16s; }
+        .hero-copy > *:nth-child(4) { animation-delay: 0.24s; }
+        .hero-copy > *:nth-child(5) { animation-delay: 0.32s; }
+        .hero-copy > *:nth-child(6) { animation-delay: 0.4s; }
+
+        .hero-visual {
+            animation: fadeUp 0.9s ease-out 0.2s both;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
             }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
             }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
+
+            .js .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .bar i {
+                width: var(--w);
             }
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 34px;
+        @media (max-width: 1024px) {
+            section {
+                padding: 88px 0;
             }
 
-            .hero .subtitle {
-                font-size: 17px;
+            .nav-links {
+                gap: 22px;
             }
 
-            .contact-cards {
+            .flow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flow li:nth-child(2)::after {
+                display: none;
+            }
+
+            .reg-steps {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 32px;
+            }
+
+            .reg-steps::before {
+                display: none;
+            }
+
+            .advisors {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counsel {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .inside,
+            .results {
+                padding: 40px;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 24px 24px;
+                background: #ffffff;
+                box-shadow: 0 16px 30px -16px rgba(12, 31, 92, 0.3);
+                display: none;
+            }
+
+            .nav.open {
+                background: #ffffff;
+            }
+
+            .nav.open .nav-links {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 0;
+                font-size: 16px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-links .btn {
+                justify-content: center;
+                margin-top: 16px;
+                border-bottom: 0;
+            }
+
+            .hero {
+                padding: 120px 0 88px;
+            }
+
+            .hero-grid,
+            .story-grid,
+            .val-grid,
+            .principles-grid,
+            .lead-grid,
+            .inside,
+            .results {
                 grid-template-columns: 1fr;
-                max-width: 360px;
+            }
+
+            .lead-grid {
+                gap: 40px;
+            }
+
+            .hero-visual {
+                max-width: 520px;
+                width: 100%;
                 margin: 0 auto;
             }
 
-            .contact h2 {
-                font-size: 28px;
+            .principles-intro {
+                position: static;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                height: auto;
+            }
+
+            .gallery figure {
+                height: 300px;
+            }
+
+            .gallery .stride {
+                grid-column: 1 / -1;
+            }
+
+            .unchanged,
+            .commit,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                max-width: 420px;
+            }
+
+            .commit {
+                margin-top: 56px;
             }
         }
 
-        /* Smooth scroll & selection */
-        html {
-            scroll-behavior: smooth;
-        }
+        @media (max-width: 640px) {
+            body {
+                font-size: 16px;
+            }
 
-        ::selection {
-            background: var(--primary);
-            color: white;
+            section {
+                padding: 72px 0;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .section-head {
+                margin-bottom: 40px;
+            }
+
+            .section-head p {
+                font-size: 17px;
+            }
+
+            .hero-chip-2 {
+                display: none;
+            }
+
+            .steps .lbl {
+                font-size: 11px;
+            }
+
+            .gallery figure {
+                height: 240px;
+            }
+
+            .inside,
+            .results,
+            .reg {
+                padding: 28px 20px;
+                border-radius: var(--radius);
+            }
+
+            .layers {
+                gap: 10px;
+            }
+
+            .layer strong {
+                font-size: 13px;
+            }
+
+            .layer span {
+                font-size: 12px;
+            }
+
+            .plus {
+                font-size: 22px;
+                margin-bottom: 60px;
+            }
+
+            .bar-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .bars-axis {
+                padding-left: 0;
+            }
+
+            .stats {
+                gap: 28px 20px;
+            }
+
+            .flow,
+            .quotes,
+            .advisors,
+            .counsel,
+            .reg-steps,
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .flow li::after {
+                display: none;
+            }
+
+            .reg-steps li {
+                padding-top: 0;
+                padding-left: 32px;
+            }
+
+            .reg-steps li::before {
+                top: 4px;
+            }
+
+            .contact-cards {
+                max-width: 360px;
+            }
+
+            .lead-card {
+                padding: 28px 20px;
+                border-radius: var(--radius);
+            }
+
+            .lead-intro > p {
+                font-size: 17px;
+            }
+
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-alt {
+                margin-top: 56px;
+            }
+
+            .member .photo {
+                aspect-ratio: 1;
+            }
+
+            .member img {
+                object-position: 50% 20%;
+            }
+
+            .support {
+                gap: 24px 32px;
+                padding: 28px 20px;
+            }
+
+            .support img {
+                height: 36px;
+            }
+
+            .support .tall {
+                height: 46px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-inner">
-            <img src="raicare_logo.png" alt="RaiCare" class="logo-img">
-            <h1>The Future of Wound Healing</h1>
-            <p class="subtitle">Self-powered, waterproof therapeutic technology that accelerates healing, reduces infection, and modulates pain.</p>
-            <a href="#contact" class="cta-btn">Get in Touch</a>
-        </div>
-        <div class="scroll-hint">
-            <span></span>
-        </div>
-    </section>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="contact-inner">
-            <h2>Let's Connect</h2>
-            <p class="section-subtitle">Interested in RaiCare? Reach out and we'll get back to you.</p>
-            <div class="contact-cards">
-                <a href="mailto:kanishk@raicare.health" class="contact-card">
-                    <div class="card-icon">&#9993;</div>
-                    <div class="card-label">Founder</div>
-                    <div class="card-email">kanishk@raicare.health</div>
-                </a>
-                <a href="mailto:info@raicare.com" class="contact-card">
-                    <div class="card-icon">&#9993;</div>
-                    <div class="card-label">General</div>
-                    <div class="card-email">info@raicare.com</div>
-                </a>
-                <a href="mailto:support@raicare.com" class="contact-card">
-                    <div class="card-icon">&#9993;</div>
-                    <div class="card-label">Support</div>
-                    <div class="card-email">support@raicare.com</div>
-                </a>
-            </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2 4.5 13.5h6l-1.5 8.5 9-11.5h-6z" fill="#f8d55e" stroke="#a08210" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.16"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+            <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+            <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- Nav -->
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#top" class="brand" aria-label="RaiCare home">
+                <svg aria-hidden="true"><use href="#i-bolt"/></svg>RaiCare
+            </a>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#patch">The Patch</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#workflow">Workflow</a></li>
+                <li><a href="#validation">Validation</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#principles">Principles</a></li>
+                <li><a href="#contact" class="btn btn-primary">Get Updates</a></li>
+            </ul>
         </div>
-    </section>
+    </header>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="top">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-tag">Wounds Don&rsquo;t Have To Be A Life Sentence</p>
+                    <h1><img src="images/sparkheal-wordmark.png" alt="SparkHeal" class="wordmark" width="1200" height="409"></h1>
+                    <p class="hero-sub">Turns passive wound dressings into <em>active therapy</em></p>
+                    <p class="hero-lead">SparkHeal is a self-powered electrical stimulation patch. Everyday movement, even blood flow, powers therapy right at the wound. No batteries, no wires, and nothing extra for patients to remember.</p>
+                    <div class="hero-ctas">
+                        <a href="#patch" class="btn btn-primary">See the Patch</a>
+                        <a href="#contact" class="btn btn-ghost">Get Updates</a>
+                    </div>
+                    <ol class="steps" aria-label="How SparkHeal works">
+                        <li><span class="dot"></span><span class="num">01</span><span class="lbl">Body<br>moves</span></li>
+                        <li><span class="dot"></span><span class="num">02</span><span class="lbl">Patch generates electricity</span></li>
+                        <li><span class="dot"></span><span class="num">03</span><span class="lbl">Wound<br>receives</span></li>
+                    </ol>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-main">
+                        <img src="images/feet-soles.jpg" alt="Two SparkHeal patches worn on the soles of a person's feet" width="688" height="1010" fetchpriority="high">
+                    </div>
+                    <div class="hero-inset">
+                        <img src="images/patch-wrist.jpg" alt="Close-up of a SparkHeal patch adhered to the back of a wrist" width="768" height="960">
+                    </div>
+                    <span class="chip hero-chip"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Self-powered &middot; no batteries</span>
+                    <span class="chip hero-chip-2">Waterproof &middot; wire-free</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- The patch -->
+        <section id="patch">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">The Patch</span>
+                    <h2>A dressing that heals while you move</h2>
+                    <p>SparkHeal sits on the wound like any other dressing. Inside, a magnetoelastic generator turns the body&rsquo;s own motion into gentle electrical stimulation, delivered directly to the wound bed.</p>
+                </div>
+
+                <div class="gallery reveal">
+                    <figure>
+                        <img src="images/patch-wrist.jpg" alt="SparkHeal patch on the back of a wrist" width="768" height="960" loading="lazy">
+                        <figcaption class="chip">On the wrist</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/feet-crossed.jpg" alt="SparkHeal patches on the soles of crossed feet" width="780" height="1080" loading="lazy">
+                        <figcaption class="chip">On the feet</figcaption>
+                    </figure>
+                    <figure class="stride">
+                        <img src="images/foot-stride.jpg" alt="SparkHeal patch on the sole of a foot mid-stride" width="1120" height="700" loading="lazy">
+                        <figcaption class="chip">Mid-stride, powering itself</figcaption>
+                    </figure>
+                </div>
+
+                <div class="inside reveal">
+                    <div class="layers">
+                        <figure class="layer">
+                            <div class="layer-img"><img src="images/layer-meg.jpg" alt="Magnetoelastic generator layer with a square spiral coil" width="579" height="607" loading="lazy"></div>
+                            <figcaption><strong>Magnetoelastic generator</strong><span>Turns motion into current</span></figcaption>
+                        </figure>
+                        <span class="plus" aria-hidden="true">+</span>
+                        <figure class="layer">
+                            <div class="layer-img"><img src="images/layer-contact.jpg" alt="Clear wound contact layer" width="614" height="631" loading="lazy"></div>
+                            <figcaption><strong>Wound contact layer</strong><span>Delivers it to the wound</span></figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <h3>Inside the patch</h3>
+                        <p>Two layers, one job: keep therapy running between clinic visits. Output stays within the physiologic range and below known electrical-stimulation safety thresholds.</p>
+                        <ul class="checks">
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Self-powered.</strong> No batteries or wires.</span></li>
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Adjunct to standard care.</strong> Fits the dressing change clinics already do.</span></li>
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Activated by movement,</strong> even blood flow.</span></li>
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Modulates pain</strong> without opioids.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="results reveal" id="results">
+                    <div>
+                        <span class="eyebrow">Preclinical results</span>
+                        <div class="big">2x</div>
+                        <p class="big-label">the wound contraction of standard care by Day&nbsp;5</p>
+                        <p class="footnote">Contraction at this level by Day 5 is typically not seen until Week 2 in aged mouse models.</p>
+                    </div>
+                    <div>
+                        <div class="bars" role="img" aria-label="Relative wound contraction at Day 5: standard of care 38 percent, conventional electrical stimulation 66 percent, SparkHeal 76 percent">
+                            <div class="bar-row soc"><span class="bar-name">Standard of care</span><div class="bar"><i style="--w:38%">38%</i></div></div>
+                            <div class="bar-row es"><span class="bar-name">Wired electrical stimulation</span><div class="bar"><i style="--w:66%">66%</i></div></div>
+                            <div class="bar-row ours"><span class="bar-name">SparkHeal</span><div class="bar"><i style="--w:76%">76%</i></div></div>
+                        </div>
+                        <p class="bars-axis" style="margin-top:12px">Relative wound contraction, Day 5</p>
+                        <p class="footnote" style="margin-top:14px">Full-thickness wounds in aged (2-year-old) wild-type mice. Pilot study (n=2) designed for signal, not statistical significance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story -->
+        <section class="story" id="story">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-photo reveal">
+                        <img src="images/clinic-waiting-room.jpg" alt="A crowded wound clinic waiting room full of patients" width="1100" height="661" loading="lazy">
+                    </div>
+                    <div class="story-text reveal">
+                        <span class="eyebrow">Why we built it</span>
+                        <h2>Meet Mrs. Smith.</h2>
+                        <p>Mrs. Smith has a foot ulcer that hasn&rsquo;t closed in months. Every week she waits in a crowded clinic for a debridement and a fresh dressing, then goes home until the next visit. Between appointments, the dressing on her wound does what dressings have always done: it covers, and it waits.</p>
+                        <p>Chronic wounds rarely stay solved. They shrink, recur and open in new places. Clinicians told us a diabetic foot ulcer is never cured, only put into remission. For patients like Mrs. Smith, <strong>the stakes are a limb.</strong></p>
+                        <p>We built SparkHeal so the dressing she already wears can do more. Every step she takes delivers therapy to the wound, between visits, with nothing new for her to do.</p>
+                        <p class="story-note">Mrs. Smith is a fictional character created for illustration, inspired by experiences patients and caregivers shared with us. Any resemblance to actual persons, living or dead, is purely coincidental. The photo is for illustration only and does not depict any person described here.</p>
+                    </div>
+                </div>
+
+                <div class="stats-band reveal">
+                    <h3>Open chronic wounds are as deadly as cancer.</h3>
+                    <div class="stats">
+                        <div class="stat"><div class="n">10M</div><p>Up to 10 million Americans are affected by chronic wounds every year</p></div>
+                        <div class="stat"><div class="n">$22.5B</div><p>Spent by Medicare each year managing chronic wounds in the U.S.</p></div>
+                        <div class="stat"><div class="n">85%</div><p>Of lower-limb amputations start with a single foot ulcer</p></div>
+                        <div class="stat"><div class="n">Months</div><p>Per treatment episode, consuming scarce visit slots in capacity-constrained clinics</p></div>
+                    </div>
+                    <p class="footnote">Sources: Journal of Multidisciplinary Healthcare; NIDDK; Value in Health; Journal of Medical Economics; Advances in Wound Care.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow -->
+        <section class="workflow" id="workflow">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Clinical workflow</span>
+                    <h2>No new workflow. Just a better dressing.</h2>
+                    <p>SparkHeal goes on as the wound contact layer during the dressing change clinics already perform. The visit, the billing and the patient&rsquo;s routine stay the same. What changes is what happens between visits.</p>
+                </div>
+
+                <ol class="flow reveal">
+                    <li>
+                        <span class="step-n">1</span>
+                        <span class="who">Wound care specialist</span>
+                        <h3>Assess &amp; debride</h3>
+                        <p>The MD or DPM evaluates the wound and debrides as usual.</p>
+                        <span class="tag">Unchanged</span>
+                    </li>
+                    <li class="on">
+                        <span class="step-n">2</span>
+                        <span class="who">Clinician or nurse</span>
+                        <h3>Dress the wound</h3>
+                        <p>SparkHeal is applied as the contact layer, under the usual secondary dressing.</p>
+                        <span class="tag blue"><svg aria-hidden="true"><use href="#i-bolt"/></svg>SparkHeal applied</span>
+                    </li>
+                    <li class="on">
+                        <span class="step-n">3</span>
+                        <span class="who">Patient at home</span>
+                        <h3>Life goes on</h3>
+                        <p>Walking, shifting, even blood flow powers continuous stimulation. Nothing to charge, wear or remember.</p>
+                        <span class="tag blue"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Therapy between visits</span>
+                    </li>
+                    <li>
+                        <span class="step-n">4</span>
+                        <span class="who">Clinic or home health</span>
+                        <h3>Next dressing change</h3>
+                        <p>The old patch comes off with the dressing and a fresh one goes on.</p>
+                        <span class="tag">Same schedule</span>
+                    </li>
+                </ol>
+                <p class="loop reveal"><svg aria-hidden="true"><use href="#i-loop"/></svg>Repeats at every dressing change until the wound closes</p>
+
+                <div class="unchanged reveal">
+                    <div>
+                        <h3>For patients</h3>
+                        <p>Zero compliance burden. The same dressing schedule, with therapy that runs on their own movement.</p>
+                    </div>
+                    <div>
+                        <h3>For clinicians</h3>
+                        <p>The same visit and the same steps. SparkHeal is applied like any contact layer, as an adjunct to standard of care.</p>
+                    </div>
+                    <div>
+                        <h3>For clinics &amp; payers</h3>
+                        <p>Designed for existing supply billing (<span class="codes">HCPCS A6206/A6207</span>), with E/M and debridement codes (<span class="codes">CPT 99213/99214</span>, <span class="codes">97597/97598</span>) preserved.</p>
+                    </div>
+                </div>
+
+                <div class="sites reveal">
+                    <span>Sites of care</span>
+                    <span class="chip">Physician office</span>
+                    <span class="chip">Home health</span>
+                    <span class="chip">Skilled nursing</span>
+                    <span class="chip">Hospital outpatient (bundled)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Validation -->
+        <section id="validation">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Customer discovery &amp; regulatory</span>
+                    <h2>Shaped by the people who will use it</h2>
+                </div>
+
+                <div class="val-grid">
+                    <div class="reveal">
+                        <div class="bignum">100+</div>
+                        <p class="bignum-label">interviews through the NSF Innovation Corps (I-Corps) program</p>
+                        <div class="icorps-logos">
+                            <img src="images/logos/nsf.png" alt="U.S. National Science Foundation" width="118" height="120" loading="lazy">
+                            <img src="images/logos/nsf-icorps.png" alt="NSF I-Corps" width="281" height="80" loading="lazy">
+                        </div>
+                        <ul class="breakdown">
+                            <li><b>20+</b><span><strong>Patients &amp; caregivers</strong> living with chronic wounds and chronic pain</span></li>
+                            <li><b>10+</b><span><strong>Clinicians:</strong> vascular surgeons, podiatrists, internal and emergency medicine physicians, wound nurses</span></li>
+                            <li><b>10+</b><span><strong>Regulatory, reimbursement &amp; billing experts</strong>, including a former FDA deputy director</span></li>
+                            <li><b>+</b><span>Hospital value-analysis leaders, clinical-trial offices, manufacturers and investors</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="reveal">
+                        <h3 class="heard-title">What we heard</h3>
+                        <div class="quotes">
+                            <figure class="quote big">
+                                <p>When can I enroll?</p>
+                                <cite>Patient with a chronic wound</cite>
+                            </figure>
+                            <figure class="quote">
+                                <p>If you can prove faster healing, there is a &ldquo;remarkable market.&rdquo;</p>
+                                <cite>Geriatrician, Medicare patient panel</cite>
+                            </figure>
+                            <figure class="quote">
+                                <p>A passive therapy that keeps healed foot ulcers closed would be strongly valuable. Nothing exists today for remission maintenance.</p>
+                                <cite>Podiatric surgeon, limb preservation</cite>
+                            </figure>
+                            <figure class="quote">
+                                <p>Would prescribe it if a roughly 30-patient study shows a meaningful healing effect, and is willing to take part in that study.</p>
+                                <cite>Physician with bioelectric wound-care experience</cite>
+                            </figure>
+                            <figure class="quote">
+                                <p>Offered to write a letter of interest and bid on running our pilot study.</p>
+                                <cite>Podiatric surgeon &amp; DFU researcher</cite>
+                            </figure>
+                            <figure class="quote">
+                                <p>Eighteen months of dressings and the wound still hasn&rsquo;t closed. Anything that adds time to application won&rsquo;t get used.</p>
+                                <cite>Caregiver of a home-health patient</cite>
+                            </figure>
+                        </div>
+                        <p class="footnote heard-note">Paraphrased from interview notes, except where quoted.</p>
+                    </div>
+                </div>
+
+                <div class="commit reveal">
+                    <div>
+                        <div class="logos">
+                            <img src="images/logos/partner-ucla-health.png" alt="UCLA Health" width="220" height="199" loading="lazy">
+                            <img src="images/logos/partner-keck-usc.png" alt="Keck Medicine of USC" width="240" height="198" loading="lazy">
+                        </div>
+                        <p><strong>Signed LOIs</strong> with UCLA Health and Keck Medicine of USC to run pilot clinical studies</p>
+                    </div>
+                    <div>
+                        <div class="logos">
+                            <img class="wide" src="images/logos/partner-professional-nursing.png" alt="Professional Nursing, Inc." width="293" height="96" loading="lazy">
+                        </div>
+                        <p><strong>Signed letter of commercial interest</strong> from a home health agency<span class="sub">Professional Nursing, Inc.</span></p>
+                    </div>
+                    <div>
+                        <div class="icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
+                        <p><strong>Exclusive worldwide patent license</strong> from UCLA for the core technology</p>
+                    </div>
+                </div>
+
+                <div class="reg reveal">
+                    <div class="reg-head">
+                        <div>
+                            <span class="eyebrow">FDA &amp; regulatory</span>
+                            <h3>A de-risked path to clearance</h3>
+                            <p>Built with regulatory consultants and stress-tested during I-Corps with a former FDA deputy director and reimbursement experts.</p>
+                        </div>
+                    </div>
+                    <ol class="reg-steps">
+                        <li class="done">
+                            <span class="status">Obtained</span>
+                            <h4>Non-significant risk designation</h4>
+                            <p>An independent IRB (Advarra) designated SparkHeal non-significant risk, so early human studies can proceed without an IDE.</p>
+                        </li>
+                        <li class="done">
+                            <span class="status">Completed</span>
+                            <h4>First in-human pilot</h4>
+                            <p>Early human use under IRB oversight showed a localized analgesic effect, consistent with imaging.</p>
+                        </li>
+                        <li class="defined">
+                            <span class="status">Defined</span>
+                            <h4>510(k) predicate strategy</h4>
+                            <p>Class II, product code GZJ, with ATOM&nbsp;1 (K121578) as primary predicate. Developed with Bentley Biomedical.</p>
+                        </li>
+                        <li>
+                            <span class="status">Planned</span>
+                            <h4>FDA Pre-Submission</h4>
+                            <p>Confirm predicate, labeling and evidence plan directly with FDA.</p>
+                        </li>
+                        <li>
+                            <span class="status">Post-pivotal</span>
+                            <h4>De Novo</h4>
+                            <p>Expanded accelerated-healing claims and a dedicated HCPCS code.</p>
+                        </li>
+                    </ol>
+                    <p class="footnote">CAUTION: SparkHeal is an investigational device, limited by United States law to investigational use. It has not been cleared or approved by the FDA.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team, mentors & support -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Mentors &amp; support</span>
+                    <h2>The people behind SparkHeal</h2>
+                    <p>A bioengineering team out of UCLA, backed by advisors who have built, cleared, reimbursed and sold wound-care and MedTech products.</p>
+                </div>
+
+                <div class="team-grid reveal">
+                    <article class="member">
+                        <div class="photo"><img src="images/team-kanishk-rai.jpg" alt="Kanishk Rai" width="314" height="351" loading="lazy"></div>
+                        <h3>Kanishk Rai</h3>
+                        <p class="role">Chief Executive Officer</p>
+                        <p class="bg">PhD Candidate, Bioengineering, UCLA</p>
+                        <div class="aff">
+                            <img src="images/logos/honeywell.png" alt="Honeywell" class="aff-honeywell" width="200" height="38" loading="lazy">
+                            <img src="images/logos/ucla.png" alt="UCLA" width="149" height="71" loading="lazy">
+                        </div>
+                    </article>
+                    <article class="member">
+                        <div class="photo"><img src="images/team-jun-chen.jpg" alt="Dr. Jun Chen" width="314" height="351" loading="lazy"></div>
+                        <h3>Dr. Jun Chen</h3>
+                        <p class="role">Chief Scientific Advisor</p>
+                        <p class="bg">Associate Professor, Bioengineering, UCLA</p>
+                        <div class="aff">
+                            <img src="images/logos/stanford.png" alt="Stanford University" class="aff-stanford" width="56" height="84" loading="lazy">
+                            <img src="images/logos/ucla.png" alt="UCLA" width="149" height="71" loading="lazy">
+                        </div>
+                    </article>
+                </div>
+
+                <h3 class="subhead reveal">Advisory board</h3>
+                <div class="advisors reveal">
+                    <div class="person">
+                        <img src="images/advisor-david-armstrong.jpg" alt="David Armstrong, MD" width="240" height="240" loading="lazy">
+                        <div>
+                            <h4>David Armstrong, MD</h4>
+                            <p>Podiatrist and KOL in limb preservation &amp; wound healing. Distinguished Professor</p>
+                            <img src="images/logos/keck-medicine-usc.png" alt="Keck Medicine of USC" class="org-logo org-keck" width="315" height="42" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="images/advisor-seth-bilazarian.jpg" alt="Seth Bilazarian, MD" width="240" height="240" loading="lazy">
+                        <div>
+                            <h4>Seth Bilazarian, MD</h4>
+                            <p>SVP and strategic advisor</p>
+                            <img src="images/logos/jnj-medtech.png" alt="Johnson &amp; Johnson MedTech" class="org-logo org-jnj" width="243" height="58" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="images/advisor-murtaza-sanwari.jpg" alt="Murtaza Sanwari" width="240" height="240" loading="lazy">
+                        <div>
+                            <h4>Murtaza Sanwari</h4>
+                            <p>SVP &amp; Area Manager</p>
+                            <img src="images/logos/kaiser-permanente.png" alt="Kaiser Permanente" class="org-logo org-kaiser" width="319" height="59" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="images/advisor-larry-hineline.jpg" alt="Larry Hineline" width="230" height="230" loading="lazy">
+                        <div>
+                            <h4>Larry Hineline</h4>
+                            <p>Ex-CFO &amp; Treasurer, <span class="org">Intra-Cellular Therapies</span>. 20+ years, seed to IPO</p>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="images/advisor-judy-naamat.jpg" alt="Judy Naamat" width="240" height="240" loading="lazy">
+                        <div>
+                            <h4>Judy Naamat</h4>
+                            <p>20+ years in IP strategy across AI, imaging and medical devices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subhead reveal">Consultants &amp; counsel</h3>
+                <div class="counsel reveal">
+                    <div class="person">
+                        <img src="images/advisor-shephard-bentley.jpg" alt="Shephard Bentley" width="200" height="200" loading="lazy">
+                        <div>
+                            <h4>Shephard Bentley</h4>
+                            <p>Regulatory strategy</p>
+                            <img src="images/logos/bentley-biomedical.png" alt="Bentley Biomedical Consulting" class="org-logo org-bentley" width="238" height="81" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="images/advisor-kathleen-schaum.jpg" alt="Kathleen D. Schaum, M.S." width="200" height="200" loading="lazy">
+                        <div>
+                            <h4>Kathleen D. Schaum, M.S.</h4>
+                            <p>Wound-care reimbursement</p>
+                            <img src="images/logos/kdsa.png" alt="KDSA" class="org-logo org-kdsa" width="91" height="91" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="firm">
+                        <img src="images/logos/knobbe-martens.png" alt="Knobbe Martens" width="357" height="75" loading="lazy">
+                        <p>Intellectual property counsel</p>
+                    </div>
+                    <div class="firm">
+                        <img src="images/logos/cooley.png" alt="Cooley" width="226" height="80" loading="lazy">
+                        <p>Corporate counsel</p>
+                    </div>
+                </div>
+
+                <h3 class="subhead reveal">Supported by</h3>
+                <div class="support reveal">
+                    <img class="tall" src="images/logos/ucla-venture-accelerator.png" alt="Venture Accelerator at UCLA Anderson" width="364" height="128" loading="lazy">
+                    <img src="images/logos/ucla-biodesign.png" alt="UCLA Biodesign Program" width="294" height="85" loading="lazy">
+                    <img src="images/logos/nsf-icorps.png" alt="NSF Innovation Corps" width="281" height="80" loading="lazy">
+                    <img src="images/logos/ucla-health.png" alt="UCLA Health" width="295" height="63" loading="lazy">
+                    <img src="images/logos/ucla-anderson.png" alt="UCLA Anderson School of Management" width="240" height="53" loading="lazy">
+                    <img src="images/logos/hbs-foundry.png" alt="Harvard Business School Foundry" width="199" height="72" loading="lazy">
+                    <img src="images/logos/la-biostart.png" alt="LA BioStart, California State University Los Angeles" width="267" height="64" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles -->
+        <section id="principles">
+            <div class="container principles-grid">
+                <div class="principles-intro reveal">
+                    <span class="eyebrow">Principles</span>
+                    <h2>How we work</h2>
+                    <p>Five commitments that shape every decision at RaiCare, from the bench to the bedside.</p>
+                    <span class="tagline">Healing That Moves With You&trade;</span>
+                </div>
+                <ol class="principles">
+                    <li class="reveal">
+                        <span class="pn">01</span>
+                        <div>
+                            <h3>Patient First</h3>
+                            <p>Patient outcomes are the measure of success at RaiCare. We listen to patients and understand their needs, experiences, and priorities first hand. Care should be built around the person receiving it, with attention to both healing and the experience of care.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="pn">02</span>
+                        <div>
+                            <h3>First Principles</h3>
+                            <p>We approach problems from first principles. That means separating the underlying problem from the terminology, assumptions, and established workflows around it, making it modular and adaptable. Starting with what is known, we ask what actually needs to be true for a better solution to work.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="pn">03</span>
+                        <div>
+                            <h3>Scientific Rigor</h3>
+                            <p>We hold our work to a high scientific standard. Ideas should be tested, challenged, and refined as evidence develops. Our goal is to contribute to the wound healing community by asking difficult questions, addressing gaps in understanding, and producing findings that can withstand careful scrutiny.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="pn">04</span>
+                        <div>
+                            <h3>Simplicity</h3>
+                            <p>Good care should not require unnecessary complexity. We look for ways to make care easier for patients and simpler for the people delivering it, particularly when clinical workflows can become burdensome. Simplicity is not about removing rigor. It is about removing what does not need to be there.</p>
+                        </div>
+                    </li>
+                    <li class="reveal">
+                        <span class="pn">05</span>
+                        <div>
+                            <h3>Curiosity</h3>
+                            <p>Curiosity drives how we work. We ask questions even when the answers are not obvious, and we remain open to changing our thinking when new evidence emerges. The aim is continuous improvement, including progress that may come from unexpected directions.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="lead-grid">
+                    <div class="lead-intro reveal">
+                        <span class="eyebrow">Stay in the loop</span>
+                        <h2>Be the first to know</h2>
+                        <p>Clinician, investor, partner or patient: join the list and we&rsquo;ll keep you posted as SparkHeal moves toward the clinic.</p>
+                        <ul class="checks">
+                            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Research &amp; Development</strong>Key findings, technology milestones and product updates</span></li>
+                            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Clinical Studies &amp; Pilots</strong>Pilot progress, study updates and enrollment opportunities</span></li>
+                            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Company News</strong>Partnerships, funding milestones and launch announcements</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="lead-card reveal">
+                        <form class="lead-form" id="lead-form">
+                            <fieldset class="pill-group">
+                                <legend>I&rsquo;m a&hellip;</legend>
+                                <div class="pills">
+                                    <label class="pill"><input type="radio" name="role" value="Clinician" required><span>Clinician</span></label>
+                                    <label class="pill"><input type="radio" name="role" value="Investor"><span>Investor</span></label>
+                                    <label class="pill"><input type="radio" name="role" value="Health system / partner"><span>Health system / partner</span></label>
+                                    <label class="pill"><input type="radio" name="role" value="Patient or caregiver"><span>Patient or caregiver</span></label>
+                                    <label class="pill"><input type="radio" name="role" value="Other"><span>Other</span></label>
+                                </div>
+                            </fieldset>
+
+                            <div class="field-row">
+                                <div class="field">
+                                    <label for="lead-name">Name</label>
+                                    <input id="lead-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+                                </div>
+                                <div class="field">
+                                    <label for="lead-email">Email</label>
+                                    <input id="lead-email" name="email" type="email" autocomplete="email" maxlength="160" required>
+                                </div>
+                                <div class="field">
+                                    <label for="lead-company">Company or organization <span class="opt">(optional)</span></label>
+                                    <input id="lead-company" name="company" type="text" autocomplete="organization" maxlength="160">
+                                </div>
+                                <div class="field">
+                                    <label for="lead-position">Position or title <span class="opt">(optional)</span></label>
+                                    <input id="lead-position" name="position" type="text" autocomplete="organization-title" maxlength="160">
+                                </div>
+                            </div>
+
+                            <label class="check"><input type="checkbox" name="notify" value="yes" checked><span>Notify me when SparkHeal is available</span></label>
+
+                            <!-- Honeypot: hidden from people, filled in by bots -->
+                            <div class="hp" aria-hidden="true">
+                                <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                            </div>
+                            <input type="hidden" name="utm_source">
+                            <input type="hidden" name="utm_medium">
+                            <input type="hidden" name="utm_campaign">
+                            <input type="hidden" name="referrer">
+
+                            <button type="submit" class="btn btn-primary lead-submit">Notify Me</button>
+                            <p class="lead-privacy">We&rsquo;ll only use this to contact you about SparkHeal. No spam; unsubscribe anytime.</p>
+                            <p class="lead-status" role="status" aria-live="polite"></p>
+                        </form>
+
+                        <div class="lead-done" id="lead-done" tabindex="-1" hidden>
+                            <div class="done-icon"><svg aria-hidden="true"><use href="#i-bolt"/></svg></div>
+                            <h3>You&rsquo;re on the list</h3>
+                            <p>Thanks for your interest in SparkHeal. We&rsquo;ll be in touch with updates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-alt reveal">
+                    <p class="contact-alt-label">Prefer email?</p>
+                    <div class="contact-cards">
+                        <a href="mailto:kanishk@raicare.health" class="contact-card">
+                            <div class="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></div>
+                            <div class="card-label">Founder</div>
+                            <div class="card-email">kanishk@raicare.health</div>
+                        </a>
+                        <a href="mailto:info@raicare.com" class="contact-card">
+                            <div class="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></div>
+                            <div class="card-label">General</div>
+                            <div class="card-email">info@raicare.com</div>
+                        </a>
+                        <a href="mailto:support@raicare.com" class="contact-card">
+                            <div class="card-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></div>
+                            <div class="card-label">Support</div>
+                            <div class="card-email">support@raicare.com</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 RaiCare. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-top">
+                <a href="#top" class="brand"><svg aria-hidden="true"><use href="#i-bolt"/></svg>RaiCare</a>
+                <span class="footer-tag">Healing That Moves With You&trade;</span>
+            </div>
+            <div class="footer-bottom">
+                <p>CAUTION: SparkHeal is an investigational device, limited by United States law to investigational use. It has not been cleared or approved by the FDA and is not available for sale.</p>
+                <p>&copy; 2026 RaiCare, Inc. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // Nav: background on scroll + mobile menu
+        const nav = document.getElementById('nav');
+        const toggle = nav.querySelector('.nav-toggle');
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+
+        nav.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // Reveal sections (and grow the result bars) as they scroll into view
+        const revealables = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealables.forEach(el => io.observe(el));
+        } else {
+            revealables.forEach(el => el.classList.add('in'));
+        }
+
+        // Lead capture: posts to the Google Apps Script web app in lead-capture/Code.gs,
+        // which saves each signup to a Google Sheet and emails the founder.
+        // Paste the web app URL from the Apps Script deployment here.
+        const LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbydOzG7iJA-fcIFIyGFdddRd2Mqvl9rH9L6rai5g78wFuRzI-8pQdee8a3fwd1oW_cZ8w/exec';
+        const LEADS_FALLBACK_EMAIL = 'kanishk@raicare.health';
+
+        const leadForm = document.getElementById('lead-form');
+        if (leadForm) {
+            const leadDone = document.getElementById('lead-done');
+            const leadStatus = leadForm.querySelector('.lead-status');
+            const leadSubmit = leadForm.querySelector('.lead-submit');
+            const params = new URLSearchParams(window.location.search);
+            ['utm_source', 'utm_medium', 'utm_campaign'].forEach(key => {
+                leadForm.elements[key].value = params.get(key) || '';
+            });
+            leadForm.elements.referrer.value = document.referrer;
+
+            const showDone = () => {
+                leadForm.hidden = true;
+                leadDone.hidden = false;
+                leadDone.focus();
+            };
+
+            leadForm.addEventListener('submit', async event => {
+                event.preventDefault();
+                if (leadForm.elements.website.value) {
+                    showDone();
+                    return;
+                }
+
+                const data = new FormData(leadForm);
+                const role = data.get('role');
+                const notify = data.get('notify') === 'yes';
+
+                // Until the Sheet is connected, hand the details to the visitor's email app
+                if (!LEADS_ENDPOINT) {
+                    const body = [
+                        `Name: ${data.get('name')}`,
+                        `Email: ${data.get('email')}`,
+                        `Role: ${role}`,
+                        `Company: ${data.get('company')}`,
+                        `Position: ${data.get('position')}`,
+                        `Notify me when SparkHeal is available: ${notify ? 'Yes' : 'No'}`
+                    ].join('\n');
+                    window.location.href = `mailto:${LEADS_FALLBACK_EMAIL}?subject=${encodeURIComponent('SparkHeal updates: ' + data.get('name'))}&body=${encodeURIComponent(body)}`;
+                    return;
+                }
+
+                leadSubmit.disabled = true;
+                leadSubmit.textContent = 'Sending…';
+                leadStatus.textContent = '';
+                leadStatus.classList.remove('error');
+
+                try {
+                    // Form-encoded body keeps this a "simple" request, which Apps Script accepts cross-origin
+                    const res = await fetch(LEADS_ENDPOINT, { method: 'POST', body: new URLSearchParams(data) });
+                    const result = await res.json();
+                    if (!result.ok) throw new Error(result.error || 'Submission failed');
+
+                    // Analytics gets the role category only, never contact details
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', { lead_role: role, notify_me: notify, form_location: 'contact' });
+                    }
+                    showDone();
+                } catch (err) {
+                    leadStatus.classList.add('error');
+                    leadStatus.innerHTML = `Something went wrong. Please email <a href="mailto:${LEADS_FALLBACK_EMAIL}">${LEADS_FALLBACK_EMAIL}</a> instead.`;
+                    leadSubmit.disabled = false;
+                    leadSubmit.textContent = 'Notify Me';
+                }
+            });
+        }
     </script>
 </body>
 </html>

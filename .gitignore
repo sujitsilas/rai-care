@@ -1,0 +1,12 @@
+# Private source material: keep out of the public site repo
+*.pdf
+*.pptx
+*.key
+*.docx
+NSF I-Corps Interviews.txt
+
+# Original logo (the site uses images/sparkheal-wordmark.png)
+raicare_logo.png
+
+# OS files
+.DS_Store
