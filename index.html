@@ -971,13 +971,6 @@
             color: var(--ink-2);
         }
 
-        .codes {
-            font-family: var(--font-display);
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--navy);
-            white-space: nowrap;
-        }
 
         .sites {
             display: flex;
@@ -998,6 +991,73 @@
             box-shadow: none;
             border: 1px solid var(--line);
             font-weight: 500;
+        }
+
+        .claim-note {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--ink-3);
+            margin-top: 20px;
+        }
+
+        .inside .claim-note {
+            color: #8d9bc7;
+            margin-top: 24px;
+        }
+
+        .investors {
+            margin-top: 64px;
+            padding: 48px 56px;
+            border-radius: var(--radius-lg);
+            background: var(--navy);
+            color: #ffffff;
+        }
+
+        .investors .eyebrow {
+            color: var(--bolt);
+        }
+
+        .investors h3 {
+            color: #ffffff;
+            margin-bottom: 32px;
+        }
+
+        .pillars {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .pillars li {
+            padding: 0 22px;
+            border-left: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .pillars li:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .pillars .pn {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--bolt);
+            margin-bottom: 10px;
+        }
+
+        .pillars h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .pillars p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #c9d3f0;
         }
 
         /* Validation */
@@ -1202,7 +1262,7 @@
         .reg-steps {
             list-style: none;
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             position: relative;
         }
@@ -1214,7 +1274,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 42%, rgba(12, 31, 92, 0.18) 42%);
+            background: linear-gradient(90deg, var(--blue) 0, var(--blue) calc(25% + 12px), rgba(12, 31, 92, 0.18) calc(25% + 12px));
         }
 
         .reg-steps li {
@@ -1239,10 +1299,6 @@
             border-color: var(--blue);
         }
 
-        .reg-steps li.defined::before {
-            border-color: var(--blue);
-        }
-
         .status {
             display: inline-block;
             font-family: var(--font-display);
@@ -1262,10 +1318,6 @@
             color: #ffffff;
         }
 
-        .defined .status {
-            color: var(--blue);
-        }
-
         .reg-steps h4 {
             font-size: 17px;
             font-weight: 600;
@@ -1280,6 +1332,10 @@
 
         .reg .footnote {
             margin-top: 32px;
+        }
+
+        .reg .reg-caution {
+            margin-top: 8px;
         }
 
         /* Team */
@@ -2004,7 +2060,7 @@
             }
 
             .reg-steps {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 row-gap: 32px;
             }
 
@@ -2022,6 +2078,17 @@
 
             .stats {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pillars {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px 32px;
+            }
+
+            .pillars li,
+            .pillars li:first-child {
+                padding: 0;
+                border-left: 0;
             }
 
             .inside,
@@ -2163,9 +2230,14 @@
 
             .inside,
             .results,
-            .reg {
+            .reg,
+            .investors {
                 padding: 28px 20px;
                 border-radius: var(--radius);
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
             }
 
             .layers {
@@ -2196,6 +2268,11 @@
 
             .stats {
                 gap: 28px 20px;
+            }
+
+            .stat .n {
+                font-size: 32px;
+                white-space: nowrap;
             }
 
             .flow,
@@ -2314,7 +2391,7 @@
                     <p class="hero-tag">Wounds Don&rsquo;t Have To Be A Life Sentence</p>
                     <h1><img src="images/sparkheal-wordmark.png" alt="SparkHeal" class="wordmark" width="1200" height="409"></h1>
                     <p class="hero-sub">Turns passive wound dressings into <em>active therapy</em></p>
-                    <p class="hero-lead">SparkHeal is a self-powered electrical stimulation patch. Everyday movement, even blood flow, powers therapy right at the wound. No batteries, no wires, and nothing extra for patients to remember.</p>
+                    <p class="hero-lead">SparkHeal is a self-powered electrical stimulation patch. Everyday movement powers therapy right at the wound. No batteries, no wires, and nothing extra for patients to remember.</p>
                     <div class="hero-ctas">
                         <a href="#patch" class="btn btn-primary">See the Patch</a>
                         <a href="#contact" class="btn btn-ghost">Get Updates</a>
@@ -2376,13 +2453,14 @@
                     </div>
                     <div>
                         <h3>Inside the patch</h3>
-                        <p>Two layers, one job: keep therapy running between clinic visits. Output stays within the physiologic range and below known electrical-stimulation safety thresholds.</p>
+                        <p>Two layers, one job: keep therapy running between clinic visits. In benchtop testing, output stayed within the physiologic range and below known electrical-stimulation safety thresholds.*</p>
                         <ul class="checks">
                             <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Self-powered.</strong> No batteries or wires.</span></li>
                             <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Adjunct to standard care.</strong> Fits the dressing change clinics already do.</span></li>
-                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Activated by movement,</strong> even blood flow.</span></li>
-                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Modulates pain</strong> without opioids.</span></li>
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Activated by movement,</strong> even blood flow.*</span></li>
+                            <li><svg style="color:var(--bolt)" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Modulates pain</strong> without opioids.*</span></li>
                         </ul>
+                        <p class="claim-note">*Early signals from benchtop testing and initial human use. These have not been established in controlled clinical studies, and SparkHeal has not been cleared or approved by the FDA.</p>
                     </div>
                 </div>
 
@@ -2429,9 +2507,9 @@
                         <div class="stat"><div class="n">10M</div><p>Up to 10 million Americans are affected by chronic wounds every year</p></div>
                         <div class="stat"><div class="n">$22.5B</div><p>Spent by Medicare each year managing chronic wounds in the U.S.</p></div>
                         <div class="stat"><div class="n">85%</div><p>Of lower-limb amputations start with a single foot ulcer</p></div>
-                        <div class="stat"><div class="n">Months</div><p>Per treatment episode, consuming scarce visit slots in capacity-constrained clinics</p></div>
+                        <div class="stat"><div class="n">6 Months</div><p>Over half of patients with venous leg ulcers were still unhealed after six months of standard care, in a 777-patient study</p></div>
                     </div>
-                    <p class="footnote">Sources: Journal of Multidisciplinary Healthcare; NIDDK; Value in Health; Journal of Medical Economics; Advances in Wound Care.</p>
+                    <p class="footnote">Sources: Journal of Multidisciplinary Healthcare; NIDDK; Value in Health; Journal of Medical Economics; Advances in Wound Care; <a href="https://pubmed.ncbi.nlm.nih.gov/32970033/" target="_blank" rel="noopener">Rajhathy et al., Journal of Wound, Ostomy and Continence Nursing (2020)</a>.</p>
                 </div>
             </div>
         </section>
@@ -2464,7 +2542,7 @@
                         <span class="step-n">3</span>
                         <span class="who">Patient at home</span>
                         <h3>Life goes on</h3>
-                        <p>Walking, shifting, even blood flow powers continuous stimulation. Nothing to charge, wear or remember.</p>
+                        <p>Everyday movement, like walking and shifting, powers stimulation between visits. Nothing to charge, wear or remember.</p>
                         <span class="tag blue"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Therapy between visits</span>
                     </li>
                     <li>
@@ -2480,15 +2558,15 @@
                 <div class="unchanged reveal">
                     <div>
                         <h3>For patients</h3>
-                        <p>Zero compliance burden. The same dressing schedule, with therapy that runs on their own movement.</p>
+                        <p>Designed for zero compliance burden: the same dressing schedule, with therapy powered by their own movement.</p>
                     </div>
                     <div>
                         <h3>For clinicians</h3>
                         <p>The same visit and the same steps. SparkHeal is applied like any contact layer, as an adjunct to standard of care.</p>
                     </div>
                     <div>
-                        <h3>For clinics &amp; payers</h3>
-                        <p>Designed for existing supply billing (<span class="codes">HCPCS A6206/A6207</span>), with E/M and debridement codes (<span class="codes">CPT 99213/99214</span>, <span class="codes">97597/97598</span>) preserved.</p>
+                        <h3>For healthcare facilities</h3>
+                        <p>Designed to protect your bottom line by reducing nursing time and dressing costs, and grow your top line by freeing capacity to treat more patients with the same team.*</p>
                     </div>
                 </div>
 
@@ -2499,6 +2577,39 @@
                     <span class="chip">Skilled nursing</span>
                     <span class="chip">Hospital outpatient (bundled)</span>
                 </div>
+
+                <div class="investors reveal">
+                    <span class="eyebrow">For investors</span>
+                    <h3>Why this matters</h3>
+                    <ul class="pillars">
+                        <li>
+                            <span class="pn">01</span>
+                            <h4>Clinical need</h4>
+                            <p>Initial focus on venous leg ulcers, with potential expansion to other chronic wounds.</p>
+                        </li>
+                        <li>
+                            <span class="pn">02</span>
+                            <h4>Workflow fit</h4>
+                            <p>Fits routine dressing changes without separate stimulation equipment or sessions.</p>
+                        </li>
+                        <li>
+                            <span class="pn">03</span>
+                            <h4>Customer focus</h4>
+                            <p>Wound clinics and home health agencies treating recurring wound-care caseloads.</p>
+                        </li>
+                        <li>
+                            <span class="pn">04</span>
+                            <h4>Recurring sales</h4>
+                            <p>Disposable patches support repeat purchases throughout each patient&rsquo;s treatment.</p>
+                        </li>
+                        <li>
+                            <span class="pn">05</span>
+                            <h4>Provider value</h4>
+                            <p>Potential to reduce nursing time and consumables while increasing treatment capacity.*</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="footnote claim-note reveal">*Anticipated benefits based on product design; not yet demonstrated in clinical use. SparkHeal is investigational and has not been cleared or approved by the FDA.</p>
             </div>
         </section>
 
@@ -2519,10 +2630,10 @@
                             <img src="images/logos/nsf-icorps.png" alt="NSF I-Corps" width="281" height="80" loading="lazy">
                         </div>
                         <ul class="breakdown">
-                            <li><b>20+</b><span><strong>Patients &amp; caregivers</strong> living with chronic wounds and chronic pain</span></li>
-                            <li><b>10+</b><span><strong>Clinicians:</strong> vascular surgeons, podiatrists, internal and emergency medicine physicians, wound nurses</span></li>
-                            <li><b>10+</b><span><strong>Regulatory, reimbursement &amp; billing experts</strong>, including a former FDA deputy director</span></li>
-                            <li><b>+</b><span>Hospital value-analysis leaders, clinical-trial offices, manufacturers and investors</span></li>
+                            <li><b>40+</b><span><strong>Patients &amp; caregivers</strong> living with chronic wounds and chronic pain</span></li>
+                            <li><b>25+</b><span><strong>Clinicians:</strong> vascular surgeons, podiatrists, internal and emergency medicine physicians, wound nurses</span></li>
+                            <li><b>20+</b><span><strong>Regulatory, reimbursement &amp; billing experts</strong></span></li>
+                            <li><b>15+</b><span>Hospital value-analysis leaders, clinical-trial offices, manufacturers and investors</span></li>
                         </ul>
                     </div>
 
@@ -2564,7 +2675,7 @@
                             <img src="images/logos/partner-ucla-health.png" alt="UCLA Health" width="220" height="199" loading="lazy">
                             <img src="images/logos/partner-keck-usc.png" alt="Keck Medicine of USC" width="240" height="198" loading="lazy">
                         </div>
-                        <p><strong>Signed LOIs</strong> with UCLA Health and Keck Medicine of USC to run pilot clinical studies</p>
+                        <p><strong>Signed LOIs</strong> with clinicians from UCLA Health and Keck Medicine of USC to support pilot clinical studies</p>
                     </div>
                     <div>
                         <div class="logos">
@@ -2585,7 +2696,7 @@
                         <div>
                             <span class="eyebrow">FDA &amp; regulatory</span>
                             <h3>A de-risked path to clearance</h3>
-                            <p>Built with regulatory consultants and stress-tested during I-Corps with a former FDA deputy director and reimbursement experts.</p>
+                            <p>Built with regulatory consultants and stress-tested during I-Corps with reimbursement experts.</p>
                         </div>
                     </div>
                     <ol class="reg-steps">
@@ -2597,25 +2708,21 @@
                         <li class="done">
                             <span class="status">Completed</span>
                             <h4>First in-human pilot</h4>
-                            <p>Early human use under IRB oversight showed a localized analgesic effect, consistent with imaging.</p>
-                        </li>
-                        <li class="defined">
-                            <span class="status">Defined</span>
-                            <h4>510(k) predicate strategy</h4>
-                            <p>Class II, product code GZJ, with ATOM&nbsp;1 (K121578) as primary predicate. Developed with Bentley Biomedical.</p>
+                            <p>Early human use under IRB oversight showed a localized analgesic effect, consistent with imaging.*</p>
                         </li>
                         <li>
                             <span class="status">Planned</span>
                             <h4>FDA Pre-Submission</h4>
-                            <p>Confirm predicate, labeling and evidence plan directly with FDA.</p>
+                            <p>Confirm the regulatory pathway, labeling and evidence plan directly with FDA.</p>
                         </li>
                         <li>
                             <span class="status">Post-pivotal</span>
                             <h4>De Novo</h4>
-                            <p>Expanded accelerated-healing claims and a dedicated HCPCS code.</p>
+                            <p>Expanded accelerated-healing claims and dedicated reimbursement codes.</p>
                         </li>
                     </ol>
-                    <p class="footnote">CAUTION: SparkHeal is an investigational device, limited by United States law to investigational use. It has not been cleared or approved by the FDA.</p>
+                    <p class="footnote">*Observation from a single participant in an early, uncontrolled study; not evidence of safety or effectiveness.</p>
+                    <p class="footnote reg-caution">CAUTION: SparkHeal is an investigational device, limited by United States law to investigational use. It has not been cleared or approved by the FDA.</p>
                 </div>
             </div>
         </section>
@@ -2624,9 +2731,9 @@
         <section class="team" id="team">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="eyebrow">Mentors &amp; support</span>
+                    <span class="eyebrow">Team &amp; support</span>
                     <h2>The people behind SparkHeal</h2>
-                    <p>Founded out of UCLA Bioengineering and backed by advisors and partners who have built, cleared, reimbursed and sold MedTech products.</p>
+                    <p>Founded out of UCLA Bioengineering and supported by specialist regulatory, reimbursement and legal partners.</p>
                 </div>
 
                 <div class="team-grid solo reveal">
@@ -2642,43 +2749,6 @@
                             </div>
                         </div>
                     </article>
-                </div>
-
-                <h3 class="subhead reveal">Advisory board</h3>
-                <div class="advisors reveal">
-                    <div class="person">
-                        <div>
-                            <h4>David Armstrong, MD</h4>
-                            <p>Podiatrist and KOL in limb preservation &amp; wound healing. Distinguished Professor</p>
-                            <img src="images/logos/keck-medicine-usc.png" alt="Keck Medicine of USC" class="org-logo org-keck" width="315" height="42" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div>
-                            <h4>Seth Bilazarian, MD</h4>
-                            <p>SVP and strategic advisor</p>
-                            <img src="images/logos/jnj-medtech.png" alt="Johnson &amp; Johnson MedTech" class="org-logo org-jnj" width="243" height="58" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div>
-                            <h4>Murtaza Sanwari</h4>
-                            <p>SVP &amp; Area Manager</p>
-                            <img src="images/logos/kaiser-permanente.png" alt="Kaiser Permanente" class="org-logo org-kaiser" width="319" height="59" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div>
-                            <h4>Larry Hineline</h4>
-                            <p>Ex-CFO &amp; Treasurer, <span class="org">Intra-Cellular Therapies</span>. 20+ years, seed to IPO</p>
-                        </div>
-                    </div>
-                    <div class="person">
-                        <div>
-                            <h4>Judy Naamat</h4>
-                            <p>20+ years in IP strategy across AI, imaging and medical devices</p>
-                        </div>
-                    </div>
                 </div>
 
                 <h3 class="subhead reveal">Consultants &amp; counsel</h3>
@@ -2701,7 +2771,7 @@
                     </div>
                 </div>
 
-                <h3 class="subhead reveal">Supported by</h3>
+                <h3 class="subhead reveal">Accelerators &amp; programs</h3>
                 <div class="support reveal">
                     <img class="tall" src="images/logos/ucla-venture-accelerator.png" alt="Venture Accelerator at UCLA Anderson" width="364" height="128" loading="lazy">
                     <img src="images/logos/ucla-biodesign.png" alt="UCLA Biodesign Program" width="294" height="85" loading="lazy">
@@ -2710,6 +2780,7 @@
                     <img src="images/logos/ucla-anderson.png" alt="UCLA Anderson School of Management" width="240" height="53" loading="lazy">
                     <img src="images/logos/hbs-foundry.png" alt="Harvard Business School Foundry" width="199" height="72" loading="lazy">
                     <img src="images/logos/la-biostart.png" alt="LA BioStart, California State University Los Angeles" width="267" height="64" loading="lazy">
+                    <img class="tall" src="images/logos/founders-boost.png" alt="Founders Boost" width="575" height="200" loading="lazy">
                 </div>
             </div>
         </section>
