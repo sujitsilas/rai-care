@@ -1362,6 +1362,24 @@
             height: 36px;
         }
 
+        /* Single team member: photo beside the details */
+        .team-grid.solo {
+            grid-template-columns: 1fr;
+            max-width: 760px;
+        }
+
+        .member.founder {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .member.founder h3 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
         .subhead {
             display: flex;
             align-items: center;
@@ -1379,6 +1397,11 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
+        }
+
+        .advisors .person {
+            align-items: flex-start;
+            padding: 22px 24px;
         }
 
         .person {
@@ -1466,6 +1489,18 @@
         .firm p {
             font-size: 14px;
             color: var(--ink-2);
+        }
+
+        .firm strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .firm .firm-kdsa {
+            height: 44px;
         }
 
         .support {
@@ -2225,6 +2260,15 @@
                 aspect-ratio: 1;
             }
 
+            .member.founder {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .member.founder h3 {
+                margin-top: 22px;
+            }
+
             .member img {
                 object-position: 50% 20%;
             }
@@ -2596,28 +2640,20 @@
                 <div class="section-head reveal">
                     <span class="eyebrow">Mentors &amp; support</span>
                     <h2>The people behind SparkHeal</h2>
-                    <p>A bioengineering team out of UCLA, backed by advisors who have built, cleared, reimbursed and sold wound-care and MedTech products.</p>
+                    <p>Founded out of UCLA Bioengineering and backed by advisors and partners who have built, cleared, reimbursed and sold MedTech products.</p>
                 </div>
 
-                <div class="team-grid reveal">
-                    <article class="member">
+                <div class="team-grid solo reveal">
+                    <article class="member founder">
                         <div class="photo"><img src="images/team-kanishk-rai.jpg" alt="Kanishk Rai" width="314" height="351" loading="lazy"></div>
-                        <h3>Kanishk Rai</h3>
-                        <p class="role">Chief Executive Officer</p>
-                        <p class="bg">PhD Candidate, Bioengineering, UCLA</p>
-                        <div class="aff">
-                            <img src="images/logos/honeywell.png" alt="Honeywell" class="aff-honeywell" width="200" height="38" loading="lazy">
-                            <img src="images/logos/ucla.png" alt="UCLA" width="149" height="71" loading="lazy">
-                        </div>
-                    </article>
-                    <article class="member">
-                        <div class="photo"><img src="images/team-jun-chen.jpg" alt="Dr. Jun Chen" width="314" height="351" loading="lazy"></div>
-                        <h3>Dr. Jun Chen</h3>
-                        <p class="role">Chief Scientific Advisor</p>
-                        <p class="bg">Associate Professor, Bioengineering, UCLA</p>
-                        <div class="aff">
-                            <img src="images/logos/stanford.png" alt="Stanford University" class="aff-stanford" width="56" height="84" loading="lazy">
-                            <img src="images/logos/ucla.png" alt="UCLA" width="149" height="71" loading="lazy">
+                        <div class="details">
+                            <h3>Kanishk Rai</h3>
+                            <p class="role">Chief Executive Officer</p>
+                            <p class="bg">PhD Candidate, Bioengineering, UCLA</p>
+                            <div class="aff">
+                                <img src="images/logos/honeywell.png" alt="Honeywell" class="aff-honeywell" width="200" height="38" loading="lazy">
+                                <img src="images/logos/ucla.png" alt="UCLA" width="149" height="71" loading="lazy">
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -2625,7 +2661,6 @@
                 <h3 class="subhead reveal">Advisory board</h3>
                 <div class="advisors reveal">
                     <div class="person">
-                        <img src="images/advisor-david-armstrong.jpg" alt="David Armstrong, MD" width="240" height="240" loading="lazy">
                         <div>
                             <h4>David Armstrong, MD</h4>
                             <p>Podiatrist and KOL in limb preservation &amp; wound healing. Distinguished Professor</p>
@@ -2633,7 +2668,6 @@
                         </div>
                     </div>
                     <div class="person">
-                        <img src="images/advisor-seth-bilazarian.jpg" alt="Seth Bilazarian, MD" width="240" height="240" loading="lazy">
                         <div>
                             <h4>Seth Bilazarian, MD</h4>
                             <p>SVP and strategic advisor</p>
@@ -2641,7 +2675,6 @@
                         </div>
                     </div>
                     <div class="person">
-                        <img src="images/advisor-murtaza-sanwari.jpg" alt="Murtaza Sanwari" width="240" height="240" loading="lazy">
                         <div>
                             <h4>Murtaza Sanwari</h4>
                             <p>SVP &amp; Area Manager</p>
@@ -2649,14 +2682,12 @@
                         </div>
                     </div>
                     <div class="person">
-                        <img src="images/advisor-larry-hineline.jpg" alt="Larry Hineline" width="230" height="230" loading="lazy">
                         <div>
                             <h4>Larry Hineline</h4>
                             <p>Ex-CFO &amp; Treasurer, <span class="org">Intra-Cellular Therapies</span>. 20+ years, seed to IPO</p>
                         </div>
                     </div>
                     <div class="person">
-                        <img src="images/advisor-judy-naamat.jpg" alt="Judy Naamat" width="240" height="240" loading="lazy">
                         <div>
                             <h4>Judy Naamat</h4>
                             <p>20+ years in IP strategy across AI, imaging and medical devices</p>
@@ -2666,21 +2697,13 @@
 
                 <h3 class="subhead reveal">Consultants &amp; counsel</h3>
                 <div class="counsel reveal">
-                    <div class="person">
-                        <img src="images/advisor-shephard-bentley.jpg" alt="Shephard Bentley" width="200" height="200" loading="lazy">
-                        <div>
-                            <h4>Shephard Bentley</h4>
-                            <p>Regulatory strategy</p>
-                            <img src="images/logos/bentley-biomedical.png" alt="Bentley Biomedical Consulting" class="org-logo org-bentley" width="238" height="81" loading="lazy">
-                        </div>
+                    <div class="firm">
+                        <img src="images/logos/bentley-biomedical.png" alt="Bentley Biomedical Consulting" width="238" height="81" loading="lazy">
+                        <p><strong>Shephard Bentley</strong>Regulatory strategy</p>
                     </div>
-                    <div class="person">
-                        <img src="images/advisor-kathleen-schaum.jpg" alt="Kathleen D. Schaum, M.S." width="200" height="200" loading="lazy">
-                        <div>
-                            <h4>Kathleen D. Schaum, M.S.</h4>
-                            <p>Wound-care reimbursement</p>
-                            <img src="images/logos/kdsa.png" alt="KDSA" class="org-logo org-kdsa" width="91" height="91" loading="lazy">
-                        </div>
+                    <div class="firm">
+                        <img src="images/logos/kdsa.png" alt="KDSA" class="firm-kdsa" width="91" height="91" loading="lazy">
+                        <p><strong>Kathleen D. Schaum, M.S.</strong>Wound-care reimbursement</p>
                     </div>
                     <div class="firm">
                         <img src="images/logos/knobbe-martens.png" alt="Knobbe Martens" width="357" height="75" loading="lazy">
