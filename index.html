@@ -226,19 +226,18 @@
         .brand {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 22px;
-            letter-spacing: -0.02em;
-            color: var(--navy);
             text-decoration: none;
         }
 
-        .brand svg {
-            width: 22px;
-            height: 22px;
+        .brand img {
+            width: auto;
+            height: 38px;
         }
+
+        footer .brand img {
+            height: 34px;
+        }
+
 
         .nav-links {
             display: flex;
@@ -1159,20 +1158,6 @@
             height: 52px;
         }
 
-        .commit .icon {
-            display: grid;
-            place-items: center;
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: var(--lavender);
-            color: var(--blue);
-        }
-
-        .commit .icon svg {
-            width: 30px;
-            height: 30px;
-        }
 
         .commit p {
             font-size: 16px;
@@ -2297,7 +2282,6 @@
             <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.16"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
             <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
             <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-            <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
         </defs>
     </svg>
 
@@ -2305,7 +2289,7 @@
     <header class="nav" id="nav">
         <div class="container nav-inner">
             <a href="#top" class="brand" aria-label="RaiCare home">
-                <svg aria-hidden="true"><use href="#i-bolt"/></svg>RaiCare
+                <img src="images/raicare-logo.png" alt="RaiCare" width="664" height="160">
             </a>
             <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -2589,7 +2573,9 @@
                         <p><strong>Signed letter of commercial interest</strong> from a home health agency<span class="sub">Professional Nursing, Inc.</span></p>
                     </div>
                     <div>
-                        <div class="icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
+                        <div class="logos">
+                            <img src="images/logos/ucla-tdg-licensed.jpg" alt="Licensed from UCLA Technology Development Group" width="1000" height="325" loading="lazy">
+                        </div>
                         <p><strong>Exclusive worldwide patent license</strong> from UCLA for the core technology</p>
                     </div>
                 </div>
@@ -2876,7 +2862,7 @@
     <footer>
         <div class="container">
             <div class="footer-top">
-                <a href="#top" class="brand"><svg aria-hidden="true"><use href="#i-bolt"/></svg>RaiCare</a>
+                <a href="#top" class="brand" aria-label="RaiCare home"><img src="images/raicare-logo-white.png" alt="RaiCare" width="664" height="160" loading="lazy"></a>
                 <span class="footer-tag">Healing That Moves With You&trade;</span>
             </div>
             <div class="footer-bottom">
